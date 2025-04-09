@@ -1,2 +1,4 @@
 Chart2 shows the number of university buildings constructed over time. The x-axis represents the year buildings were constructed, grouped into 5-year intervals. The y-axis shows how many buildings were built in each time bin. This plot helps identify periods of rapid infrastructure growth, such as construction booms. The data was cleaned by removing missing values in the Year Constructed column and casting it to integers. Altair’s binning functionality was used to group years into intervals for clarity.
+
+
 Chart1 visualizes the total building square footage grouped by city. Each bar represents the total Gross SqFt of all buildings located in that city across the University of Illinois system. We used a basic bar chart encoding with x as the city and y as the total square footage, sorted in descending order for readability. The tooltip helps users quickly see values. Data was grouped using Pandas’ groupby('City') and sum() on Gross SqFt, after dropping missing data.
