@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Building Inventory Visualizations</title>
+  <title>Building Visualizations</title>
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
@@ -10,56 +10,47 @@
     body {
       font-family: Arial, sans-serif;
       padding: 30px;
-      background: #f9f9f9;
-    }
-    h1 {
-      color: #333;
+      background-color: #f8f8f8;
     }
     .chart {
       margin-bottom: 50px;
+    }
+    iframe, div.vega-embed {
+      max-width: 800px;
+      margin: auto;
     }
   </style>
 </head>
 <body>
 
-<h1>Building Inventory Visualizations</h1>
+<h1> Final Project: Building Inventory Visualizations</h1>
 
 <div class="chart">
-  <h2> Chart 1: Building Construction Over Time</h2>
+  <h2>Chart 1: Number of Buildings Constructed (5-Year Intervals)</h2>
   <div id="chart1"></div>
   <script>
-    vegaEmbed('#chart1', 'Number of Buildings Constructed.json');
+    vegaEmbed('#chart1', 'Number of Buildings Constructed Over Time.json');
   </script>
-  <p>
-    Chart1 visualizes the total building square footage grouped by city. Each bar represents the total Gross SqFt 
-    of all buildings located in that city across the University of Illinois system. We used a basic bar chart 
-    encoding with x as the city and y as the total square footage, sorted in descending order for readability. 
-    The tooltip helps users quickly see values. Data was grouped using Pandas’ <code>groupby('City')</code> and 
-    <code>sum()</code> on Gross SqFt, after dropping missing data.
-  </p>
+  <p>This chart shows the number of university buildings constructed over time. The x-axis represents the year buildings were constructed, grouped into 5-year intervals. The y-axis shows how many buildings were built in each time bin. This helps identify periods of construction growth.</p>
 </div>
 
 <hr>
 
 <div class="chart">
-  <h2> Chart 2: Total Square Footage by City</h2>
+  <h2> Chart 2: Gross Square Footage by Year (Interactive)</h2>
   <div id="chart2"></div>
   <script>
-    vegaEmbed('#chart2', 'Gross SqFt by Year.json');
+    vegaEmbed('#chart2', 'Gross SqFt by Year Constructed.json');
   </script>
-  <p>
-    Chart2 shows the number of university buildings constructed over time. The x-axis represents the year buildings 
-    were constructed, grouped into 5-year intervals. The y-axis shows how many buildings were built in each time bin. 
-    This plot helps identify periods of rapid infrastructure growth, such as construction booms. The data was cleaned 
-    by removing missing values in the <code>Year Constructed</code> column and casting it to integers. Altair’s binning 
-    functionality was used to group years into intervals for clarity.
-  </p>
+  <p>This interactive chart allows users to explore the total gross square footage by year of construction. A slider allows highlighting a specific year, helping to pinpoint spikes in building space expansion over time.</p>
 </div>
 
 <hr>
 
-<p><a href="https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445_data/main/building_inventory.csv">The Data</a> |
-<a href="https://github.com/ljc690106/hjy.github.io/blob/main/Workbook.ipynb">The Analysis</a></p>
+<p>
+  <a href="https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445_data/main/building_inventory.csv">📄 The Data</a> |
+  <a href="https://github.com/ljc690106/hjy/blob/main/Workbook.ipynb"> The Analysis</a>
+</p>
 
 </body>
 </html>
