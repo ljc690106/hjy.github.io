@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Building Visualizations</title>
+  <title>Final Project Visualizations</title>
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
@@ -10,10 +10,13 @@
     body {
       font-family: Arial, sans-serif;
       padding: 30px;
-      background-color: #f8f8f8;
+      background-color: #f4f4f4;
+    }
+    h1, h2 {
+      color: #333;
     }
     .chart {
-      margin-bottom: 50px;
+      margin-bottom: 60px;
     }
     iframe, div.vega-embed {
       max-width: 800px;
@@ -23,26 +26,26 @@
 </head>
 <body>
 
-<h1> Final Project: Building Inventory Visualizations</h1>
+<h1> Building Inventory Visualizations</h1>
 
 <div class="chart">
-  <h2>Chart 1: Number of Buildings Constructed (5-Year Intervals)</h2>
+  <h2>Chart 1: Gross Square Footage by Year Constructed (Interactive)</h2>
   <div id="chart1"></div>
   <script>
-    vegaEmbed('#chart1', 'Number of Buildings Constructed Over Time.json');
+    vegaEmbed('#chart1', 'Gross SqFt by Year Constructed.json');
   </script>
-  <p>This chart shows the number of university buildings constructed over time. The x-axis represents the year buildings were constructed, grouped into 5-year intervals. The y-axis shows how many buildings were built in each time bin. This helps identify periods of construction growth.</p>
+  <p>This interactive chart allows users to explore total gross square footage by year. A slider highlights a selected year. The data was cleaned and grouped to produce meaningful visual trends in building area expansion over time.</p>
 </div>
 
 <hr>
 
 <div class="chart">
-  <h2> Chart 2: Gross Square Footage by Year (Interactive)</h2>
+  <h2>Chart 2: Number of Buildings Constructed (5-Year Bins)</h2>
   <div id="chart2"></div>
   <script>
-    vegaEmbed('#chart2', 'Gross SqFt by Year Constructed.json');
+    vegaEmbed('#chart2', 'Number of Buildings Constructed Over Time.json');
   </script>
-  <p>This interactive chart allows users to explore the total gross square footage by year of construction. A slider allows highlighting a specific year, helping to pinpoint spikes in building space expansion over time.</p>
+  <p>This bar chart displays the number of buildings constructed, grouped into 5-year intervals. It uses Altair's binning functionality and helps reveal periods of construction growth in university infrastructure.</p>
 </div>
 
 <hr>
@@ -54,3 +57,4 @@
 
 </body>
 </html>
+
